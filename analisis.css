@@ -1,0 +1,462 @@
+body {
+  margin: 0;
+}
+
+.analisis {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.analisis .sidebar {
+  width: 220px;
+  background-color: #114fa3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.analisis .sidebar button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.analisis .sidebar button:hover {
+  background-color: #333;
+}
+
+.analisis .sidebar button:active {
+  transform: scale(0.95);
+}
+
+.analisis .main {
+  flex: 1;
+  background-color: #114fa3;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.analisis .logo-fondo {
+  position: absolute;
+  width: 60%;
+  max-width: 600px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+
+
+.analisis .main:has(#panelFallasAnalisis[style*="block"]) .logo-fondo,
+.analisis .main:has(#panelTiempoReparacion[style*="block"]) .logo-fondo,
+.analisis .main:has(#panelTiempoFallas[style*="block"]) .logo-fondo,
+.analisis .main:has(#panelPrioridad[style*="block"]) .logo-fondo,
+.analisis .main:has(#panelResumen[style*="block"]) .logo-fondo {
+  display: none;
+}
+
+.analisis h3 {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 0 auto 20px auto;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+
+.analisis .filtros {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.analisis .filtros input,
+.analisis .filtros select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.analisis .filtros button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.analisis .filtros button:hover {
+  background-color: #333;
+}
+
+.analisis table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.analisis th,
+.analisis td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.analisis #panelFallasAnalisis,
+.analisis #panelTiempoReparacion,
+.analisis #panelTiempoFallas,
+.analisis #panelPrioridad,
+.analisis #panelResumen {
+  padding: 20px;
+  width: 100%;
+  overflow: auto;
+}
+
+.analisis .graficos {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.analisis .graficos div {
+  width: 250px;
+  height: 250px;
+}
+
+.analisis #totalFallasAnalisis {
+  text-align: center;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.analisis #btnSalir {
+  margin-top: 20px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.analisis #btnSalir:hover {
+  background-color: #333;
+}
+
+.analisis #btnFiltrarFallasAnalisis,
+.analisis #btnFiltrarTiempo,
+.analisis #btnFiltrarTiempoFallas,
+.analisis #btnFiltrarPrioridad {
+
+  width: 150px;
+  padding: 10px 15px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.analisis #btnFiltrarFallasAnalisis:hover,
+.analisis #btnFiltrarTiempo:hover,
+.analisis #btnFiltrarTiempoFallas:hover,
+.analisis #btnFiltrarPrioridad:hover {
+  background-color: #333;
+}
+
+.analisis #btnFiltrarFallasAnalisis:active,
+.analisis #btnFiltrarTiempo:active,
+.analisis #btnFiltrarTiempoFallas:active,
+.analisis #btnFiltrarPrioridad:active {
+  transform: scale(0.95);
+}
+
+.analisis #totalFallasAnalisis {
+  display: block;
+  background-color: black;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 20px auto;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.analisis #resultadoFallasAnalisis {
+  text-align: center;
+  margin-top: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: white;
+  background-color: black; 
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: none; 
+}
+
+.analisis #resultadoTiempoReparacion {
+  text-align: center;
+  margin-top: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: white;
+  background-color: black; 
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: none; 
+}
+
+.analisis #resultadoTiempoFallas {
+  text-align: center;
+  margin-top: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: white;
+  background-color: black; 
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+.analisis #resultadoPrioridadAnalisis {
+  text-align: center;
+  margin-top: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: white;
+  background-color: black;
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+.analisis .fila-resumen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap; 
+}
+
+.analisis .fila-resumen .campo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.analisis .fila-resumen label {
+  background-color: black;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  letter-spacing: 2px;
+}
+
+.analisis .fila-resumen select {
+  width: 180px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+}
+
+.analisis #btnComparar {
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.analisis #btnComparar:hover {
+  background-color: #333;
+}
+
+.analisis .tabla-info-dia {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.analisis .tabla-info-dia td {
+  padding: 12px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.analisis .tabla-info-dia td:first-child {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  width: 60%;
+}
+
+.analisis .comparacion-maquinas {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.analisis .box-maquina {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.analisis .tabla-info-dia {
+  width: 100%;
+  max-width: 450px;
+}
+
+.analisis .tabla-info-dia caption.titulo-maquina {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-align: center;
+  caption-side: top;
+}
+
+
+.analisis .comparacion-graficos {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  width: 100%;
+  margin-top: 30px;
+  align-items: flex-start; 
+}
+
+.analisis .grafico-box {
+  flex: 0 0 auto;  
+  width: 320px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.analisis .comparacion-graficos {
+  display: flex;
+  justify-content: center;
+  gap: 400px; 
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.analisis .sidebar-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.analisis .sidebar-bottom button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.analisis .sidebar-bottom button:hover {
+  background-color: #333;
+}
+
+.analisis .sidebar-bottom button:active {
+  transform: scale(0.95);
+}
+
+.analisis .main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.analisis .main.split {
+  flex-direction: row;
+}
+
+.analisis .main.split .panel {
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.analisis .panel {
+  display: none;
+}
+
+.analisis .panel.active {
+  display: block;
+}

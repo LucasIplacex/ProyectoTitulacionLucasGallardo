@@ -1,0 +1,342 @@
+.externo {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.externo .sidebar {
+  width: 220px;
+  background-color: #114fa3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+    flex-shrink: 0;     
+}
+
+.externo .sidebar button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.externo .main {
+  flex: 1;
+  background-color: #114fa3;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px 50px 50px;
+  gap: 20px;
+  position: relative;
+}
+
+.externo .logo-fondo {
+  position: absolute;
+  width: 60%;
+  max-width: 600px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.externo .main:has(.panel[style*="block"]) .logo-fondo,
+.externo .main:has(.info-dia[style*="block"]) .logo-fondo {
+  display: none;
+}
+
+.externo .panel {
+  padding: 20px;
+  width: 100%;
+  overflow: auto;
+  display: none;
+}
+
+.externo table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  margin: 0 auto; 
+}
+
+.externo th,
+.externo td {
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.externo .panel h3,
+.externo .info-dia h3 {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 0 auto 20px auto;
+  letter-spacing: 3px;
+}
+
+.externo input,
+.externo select {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
+}
+
+.externo button {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+
+.externo #mensajeBusqueda {
+  display: none;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: fit-content;
+  margin: 15px auto;
+}
+
+.externo #btnGuardarFalla {
+  display: block;
+  margin: 20px auto; 
+  padding: 15px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.externo .filtros-fallas {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 15px;
+}
+
+.externo button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.externo button:hover {
+  background-color: #333;
+}
+
+.externo .btn-editar {
+  background-color: black;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.externo .btn-borrar {
+  background-color: #b30000;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.externo .btn-borrar:hover {
+  background-color: #800000;
+}
+
+.externo .btn-guardar {
+  background-color: black;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.externo .btn-cancelar {
+  background-color: #b30000;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.externo .btn-cancelar:hover {
+  background-color: #800000;
+}
+
+.externo td:last-child button {
+  flex: 1;
+  max-width: 90px;
+}
+
+.externo #btnFiltrarFallasExt,
+.externo #btnFiltrarInspecciones {
+  width: 150px;
+  font-size: 12px;
+}
+
+.externo #mensajeBusquedaExterno {
+  display: none;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: fit-content;
+  margin: 15px auto;
+}
+
+
+.externo #mensajeBusquedaFallasExt {
+  display: none; 
+  background-color: black;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  width: fit-content;
+  margin: 20px auto; 
+}
+
+.externo .acciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.externo .acciones button {
+  width: 90px;
+}
+
+.externo .filtros-inspecciones {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.externo .main:has(.panel[style*="block"] ~ .panel[style*="block"]) .panel[style*="block"] {
+  height: 400px;
+}
+
+.externo .filtros-info-dia{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.externo .tabla-info {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 15px;
+}
+
+.externo .tabla-info td {
+  padding: 10px;
+  border: 1px solid black;
+  text-align: left;
+}
+
+.externo .tabla-info td:last-child {
+  display: table-cell;
+}
+
+.externo #btnSalir {
+  margin-top: auto;
+  width: 100%;
+}
+
+#btnGuardarFalla:hover {
+  background-color: #333;
+}
+
+#btnGuardarFalla:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+#btnFiltrarFallasExt:hover {
+  background-color: #333;
+}
+
+#btnFiltrarFallasExt:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+.externo .btn-editar:hover {
+  background-color: #333;
+}
+
+.externo .btn-editar:active {
+  transform: scale(0.95);
+}
+
+.externo .btn-borrar:hover {
+  background-color: #800000;
+}
+
+.externo .btn-borrar:active {
+  transform: scale(0.95);
+}
+
+.externo .btn-guardar:hover {
+  background-color: #333;
+}
+
+.externo .btn-guardar:active {
+  transform: scale(0.95);
+}
+
+.externo .btn-cancelar:hover {
+  background-color: #800000;
+}
+
+.externo .btn-cancelar:active {
+  transform: scale(0.95);
+}
+
+#btnFiltrarInspecciones:hover {
+  background-color: #333;
+}
+
+#btnFiltrarInspecciones:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+#btnBuscarInfoDiaExterno:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+#btnSalir:active {
+  transform: scale(0.95);
+  background-color: #000;
+}

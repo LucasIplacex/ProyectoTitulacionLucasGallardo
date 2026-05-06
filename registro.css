@@ -1,0 +1,130 @@
+.registro {
+  height: 100vh; 
+  font-family: Arial, sans-serif; 
+}
+
+body {
+  margin: 0; 
+}
+
+.registro .container {
+  display: flex; 
+  height: 100%; 
+}
+
+.registro .left {
+  width: 50%; 
+  background-color: #114fa3; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 40px; 
+}
+
+.registro .info-box {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 12px; 
+  width: 50%; 
+  text-align: center; 
+  letter-spacing: 2px; 
+  font-weight: bold;
+}
+
+.registro .logo {
+  width: 80%; 
+  border-radius: 1000px;
+  margin-top: 10px;
+}
+
+.registro .right {
+  width: 50%; 
+  background-color: #114fa3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  gap: 20px; 
+}
+
+.registro .input {
+  width: 100%; 
+  padding: 18px;
+  border-radius: 12px;
+  border: none;
+  background-color: black;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.registro button {
+  width: 100%; 
+  padding: 18px;
+  margin-left: 16px;
+  border-radius: 12px;
+  border: none;
+  background-color: black;
+  color: white;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: 0.3s; 
+}
+
+.registro button:hover {
+  background-color: #222;
+}
+
+.registro #estado {
+  color: white;
+}
+
+.registro .volver {
+  display: inline-block; 
+  margin-top: 10px;
+  margin-left: 31px;
+  padding: 12px 25px;
+  background-color: black;
+  color: white;
+  text-decoration: none; 
+  border-radius: 10px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.registro .volver:hover {
+  background-color: #222;
+}
+
+.registro select.input {
+  width: 100%;
+  padding: 18px;
+  border-radius: 12px;
+  margin-left: 18px;
+  border: none;
+  background-color: black;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+
+}
+
+.registro #estado {
+  color: rgb(218, 218, 218);
+  font-weight: bold;
+  text-align: center;
+  width: 70%;
+   margin-left: 40px;
+}
+
+#btnCrear:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+.registro .volver:active {
+  transform: scale(0.95);
+  background-color: #000;
+}

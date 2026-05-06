@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analisis</title>
+  <link rel="stylesheet" href="analisis.css">
+</head>
+
+<body>
+
+<div class="analisis">
+
+  <div class="sidebar">
+
+    <button id="btnInspeccionAnalisis">
+      Mostrar falla de maquinas
+    </button>
+
+    <button id="btnVisualizarAnalisis">
+      Tiempo entre reparaciones
+    </button>
+
+    <button id="btnAnalisisFallas">
+      Tiempo entre fallas 
+    </button>
+
+    <button id="btnPrioridadAnalisis">
+      Prioridad de maquinas
+    </button>
+
+    <button id="btnResumenAnalisis">
+      Ver analisis de maquinas
+    </button>
+
+    <div class="sidebar-bottom">
+      <button id="btnVolverInicioAnalisis">Volver</button>
+      <button id="btnSalir">Cerrar sesión</button>
+    </div>
+
+  </div>
+
+  <div class="main">
+
+    <img src="imagenes/iplacexlogo.jpg" class="logo-fondo">
+
+    <div id="panelFallasAnalisis" style="display:none;">
+
+      <h3>Fallas de máquinas</h3>
+
+      <div class="filtros">
+        <input type="text" id="filtroLocalAnalisis" placeholder="Filtrar por local">
+        <input type="text" id="filtroMaquinaAnalisis" placeholder="Filtrar por máquina">
+        <button id="btnFiltrarFallasAnalisis">Filtrar</button>
+      </div>
+
+      <table id="tablaFallasAnalisis">
+        <thead>
+          <tr>
+            <th>Local</th>
+            <th>Máquina</th>
+            <th>Cantidad de Fallas</th>
+          </tr>
+        </thead>
+        <tbody id="bodyFallasAnalisis"></tbody>
+      </table>
+      
+     <div id="resultadoFallasAnalisis"></div>
+
+     <p id="totalFallasAnalisis"><strong>Total fallas:</strong> 0</p>
+
+    </div>
+
+    <div id="panelTiempoReparacion" style="display:none;">
+
+      <h3>Tiempo entre reparaciones</h3>
+
+      <div class="filtros">
+        <input type="text" id="filtroLocalTiempo" placeholder="Filtrar por local">
+        <input type="text" id="filtroMaquinaTiempo" placeholder="Filtrar por máquina">
+        <input type="date" id="filtroFechaTiempo">
+        <button id="btnFiltrarTiempo">Filtrar</button>
+      </div>
+
+      <table id="tablaTiempoReparacion">
+        <thead>
+          <tr>
+            <th>Local</th>
+            <th>Máquina</th>
+            <th>Fecha Solicitud</th>
+            <th>Fecha Reparación</th>
+            <th>Días</th>
+          </tr>
+        </thead>
+        <tbody id="bodyTiempoReparacion"></tbody>
+      </table>
+      <div id="resultadoTiempoReparacion"></div>
+    </div>
+
+    <div id="panelTiempoFallas" style="display:none;">
+
+      <h3>Tiempo entre fallas</h3>
+
+      <div class="filtros">
+        <input type="text" id="filtroLocalFallas" placeholder="Filtrar por local">
+        <input type="text" id="filtroMaquinaFallas" placeholder="Filtrar por máquina">
+        <input type="date" id="filtroFechaFallas">
+        <button id="btnFiltrarTiempoFallas">Filtrar</button>
+      </div>
+
+      <table id="tablaTiempoFallas">
+        <thead>
+          <tr>
+            <th>Local</th>
+            <th>Máquina</th>
+            <th>Falla 1</th>
+            <th>Falla 2</th>
+            <th>Días entre fallas</th>
+          </tr>
+        </thead>
+        <tbody id="bodyTiempoFallas"></tbody>
+      </table>
+      <div id="resultadoTiempoFallas"></div>
+    </div>
+
+    <div id="panelPrioridad" style="display:none;">
+
+      <h3>Prioridad de máquinas</h3>
+
+      <div class="filtros">
+        <select id="filtroPrioridad">
+          <option value="">Todas</option>
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="baja">Baja</option>
+        </select>
+        <input type="text" id="filtroLocalPrioridad" placeholder="Filtrar por local">
+        <input type="text" id="filtroMaquinaPrioridad" placeholder="Filtrar por máquina">
+        <button id="btnFiltrarPrioridad">Filtrar</button>
+      </div>
+
+      <table id="tablaPrioridad">
+        <thead>
+          <tr>
+            <th>Local</th>
+            <th>Máquina</th>
+            <th>Fallas</th>
+            <th>Prioridad</th>
+            <th>Porcentaje del total</th>
+          </tr>
+        </thead>
+        <tbody id="bodyPrioridad"></tbody>
+      </table>
+      <div id="resultadoPrioridadAnalisis"></div>
+    </div>
+
+    <div id="panelResumen" style="display:none;">
+
+      <h3>Funcionamiento de maquinas</h3>
+
+      <div class="fila-resumen">
+      <div class="campo">
+        <label>Local:</label>
+        <select id="selectLocal"></select>
+      </div>
+
+      <div class="campo">
+        <label>Máquina 1:</label>
+        <select id="selectMaquina"></select>
+      </div>
+
+      <div class="campo">
+        <label>Máquina 2:</label>
+        <select id="selectMaquina2"></select>
+      </div>
+
+      <button id="btnComparar">Ver / Comparar</button>
+
+      </div>
+
+      <div class="comparacion-maquinas">
+
+        <div class="box-maquina" id="infoMaquina"></div>
+
+        <div class="box-maquina" id="infoMaquina2"></div>
+
+      </div>
+
+      <div class="comparacion-graficos">
+
+          <div class="grafico-box">
+            <canvas id="graficoFallas"></canvas>
+          </div>
+
+          <div class="grafico-box">
+            <canvas id="graficoFallas2"></canvas>
+          </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="main.js"></script>
+
+</body>
+</html>

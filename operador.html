@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operador</title>
+  <link rel="stylesheet" href="operador.css">
+</head>
+
+<body>
+
+<div class="operador">
+
+  <div class="sidebar">
+
+    <button id="btnInspeccion">Registrar inspecciones</button>
+
+    <button id="btnVisualizar">Visualizar inspecciones</button>
+
+    <button id="btnInfoDia">Ver información del día</button>
+
+    <button id="btnAnalisisOperador">Ver analisis</button>
+
+    <button id="btnSalir">Cerrar Sesion</button>
+
+  </div>
+
+  <div class="main">
+
+    <img src="imagenes/iplacexlogo.jpg" class="logo-fondo">
+
+    <div id="tablaInspeccion" class="panel" style="display:none;">
+      <h3>Registrar Inspección</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Máquina</th>
+            <th>Temperatura</th>
+            <th>Hora</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Observaciones</th>
+            <th>Falla</th>
+          </tr>
+        </thead>
+
+        <tbody id="tablaInspeccionBody"></tbody>
+      </table>
+
+      <button id="btnGuardarInspeccion">
+        Guardar Inspeccion
+      </button>
+    </div>
+
+    <div id="panelVisualizar" class="panel" style="display:none;">
+
+      <h3>Visualizar Inspecciones</h3>
+
+      <div class="filtros">
+      <input type="text" id="filtroLocal" placeholder="Filtrar por local">
+      <input type="date" id="filtroFecha">
+
+      <button id="btnBuscarInspecciones">Buscar</button>
+      </div>
+
+      <p id="mensajeBusqueda" style="display:none;"></p>
+
+      <table id="tablaVisualizar" style="display:none;">
+        <thead>
+          <tr>
+            <th>Máquina</th>
+            <th>Temperatura</th>
+            <th>Hora</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Observaciones</th>
+            <th>Falla</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody id="tablaVisualizarBody"></tbody>
+      </table>
+    </div>
+
+    <div id="panelInfoDia" class="info-dia" style="display:none;">
+
+      <h3>Informacion del Dia</h3> 
+
+      <div class="filtros-info">
+        <input type="text" id="infoLocal" placeholder="Local">
+        <select id="infoMaquina"></select>
+        <button id="btnBuscarInfoDia">Analizar</button>
+      </div>
+
+      <div id="resultadoInfoDia"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function salir() {
+  alert("Sesión cerrada");
+  window.location.href = "index.html";
+}
+</script>
+
+<script type="module" src="main.js"></script>
+
+</body>
+</html>

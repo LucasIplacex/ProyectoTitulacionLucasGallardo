@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jefe</title>
+  <link rel="stylesheet" href="jefe.css">
+</head>
+
+<body>
+
+<div class="jefe">
+
+  <div class="sidebar">
+
+    <button id="btnToggleAgregar">Agregar máquina</button>
+    <button id="btnToggleMaquinas">Gestión de máquinas</button>
+    <button id="btnSolicitarMantencion">Solicitar mantención</button>
+    <button id="btnEstadoMantencion">Estado mantención</button>
+    <button id="btnVisualizarInspeccionesJefe">Inspecciones</button>
+    <button id="btnVisualizarFallasJefe">Registro de Fallas</button>
+    <button id="btnInfoDiaJefe">Información del día</button>
+    <button id="btnIrAnalisisJefe">Análisis</button>
+
+    <button id="btnSalir" onclick="salir()">Cerrar Sesión</button>
+
+  </div>
+
+  <div class="main">
+
+    <img src="imagenes/iplacexlogo.jpg" class="logo-fondo">
+
+    <div id="panelAgregar" class="panel" style="display:none;">
+      <h3>Agregar máquina</h3>
+
+      <div class="form-agregar">
+      <input type="text" id="nombreMaquina" placeholder="Nombre máquina">
+      <input type="text" id="localMaquina" placeholder="Local">
+
+      <button id="btnAgregar">Guardar máquina</button>
+      </div>
+    </div>
+
+    <div id="panelBuscar" class="panel" style="display:none;">
+      <h3>Buscar máquinas</h3>
+
+      <select id="filtroEstado">
+        <option value="todas">Todas</option>
+        <option value="activas">Activas</option>
+        <option value="descontinuadas">Descontinuadas</option>
+      </select>
+
+      <input type="text" id="filtroLocalMaquina" placeholder="Filtrar por local">
+      <input type="text" id="filtroNombreMaquina" placeholder="Filtrar por máquina">
+      <button id="btnBuscar">Buscar</button>
+
+      <table id="tablaMaquinas">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Local</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="resultadoMaquinas"></tbody>
+      </table>
+
+      <p id="mensajeMaquinas" style="display:none;"></p>
+      
+    </div>
+
+    <div id="panelFiltroJefe" class="panel" style="display:none;">
+      <h3>Inspecciones</h3>
+
+      <div class="filtros-inspecciones">
+        <input type="text" id="filtroLocalJefe" placeholder="Filtrar por local">
+        <input type="date" id="filtroFechaJefe">
+        <button id="btnFiltrarJefe">Buscar</button>
+      </div>
+
+      <table id="tablaJefe">
+        <thead>
+          <tr>
+            <th>Máquina</th>
+            <th>Local</th>
+            <th>Temperatura</th>
+            <th>Hora</th>
+            <th>Fecha</th>
+            <th>Observaciones</th>
+            <th>Estado</th>
+            <th>Falla</th>
+          </tr>
+        </thead>
+        <tbody id="tablaJefeBody"></tbody>
+      </table>
+      <div id="mensajeInspeccionesJefe"></div>
+    </div>
+
+    <div id="panelMantencion" class="panel" style="display:none;">
+      <h3>Solicitar mantención</h3>
+
+      <div class="filtros-inspecciones">
+        <input type="text" id="filtroLocalMantencion" placeholder="Filtrar por local">
+        <input type="text" id="filtroMaquinaMantencion" placeholder="Filtrar por máquina">
+        <input type="date" id="filtroFechaMantencion">
+        <button id="btnFiltrarMantencion">Buscar</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Local</th>
+            <th>Máquina</th>
+            <th>Fecha</th>
+            <th>Observaciones</th>
+            <th>Seleccionar</th>
+          </tr>
+        </thead>
+        <tbody id="tablaMantencionBody"></tbody>
+      </table>
+      <div id="mensajeMantencion"></div>
+
+      <button id="btnGuardarMantencion">Guardar solicitud</button>
+    </div>
+
+    <div id="panelMantencionRealizada" class="panel" style="display:none;">
+      <h3>Mantenciones realizadas</h3>
+
+      <div class="filtros-inspecciones">
+        <input type="text" id="filtroLocalMantReal" placeholder="Filtrar por local">
+        <input type="text" id="filtroMaquinaMantReal" placeholder="Filtrar por máquina">
+        <input type="date" id="filtroFechaMantReal">
+        <button id="btnFiltrarMantReal">Buscar</button>
+      </div>
+
+      <table id="tablaMantencionRealizada">
+        <thead>
+          <tr>
+            <th>Solicitud</th>
+            <th>Máquina</th>
+            <th>Local</th>
+            <th>Fecha solicitud</th>
+            <th>Fecha trabajo</th>
+            <th>Hora</th>
+            <th>Observaciones</th>
+            <th>Detalle</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaMantencionRealizadaBody"></tbody>
+      </table>
+      <div id="mensajeMantReal"></div>
+    </div>
+
+    <div id="panelFallasJefe" class="panel" style="display:none;">
+      <h3>Registro de Fallas</h3>
+
+      <div class="filtros-fallas">
+        <input type="text" id="filtroLocalFallasJefe" placeholder="Filtrar por local">
+        <input type="date" id="filtroFechaFallasJefe">
+        <button id="btnFiltrarFallasJefe">Buscar</button>
+      </div>
+
+      <table id="tablaFallasJefe">
+        <thead>
+          <tr>
+            <th>Local</th>
+            <th>Operador</th>
+            <th>Máquina</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Descripción</th>
+            <th>Observación</th>
+            <th>Falla</th>
+          </tr>
+        </thead>
+        <tbody id="tablaFallasJefeBody"></tbody>
+      </table>
+      <div id="mensajeFallasJefe"></div>
+    </div>
+
+    <div id="panelInfoDiaJefe" class="info-dia" style="display:none;">
+      <h3>Información del día</h3>
+
+      <div class="filtros-info-dia">
+        <input type="text" id="infoLocalJefe" placeholder="Local">
+        <select id="infoMaquinaJefe"></select>
+        <button id="btnVerInformacionJefe">Analizar</button>
+      </div>
+
+      <div id="resultadoInfoDiaJefe"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function salir() {
+  window.location.href = "index.html";
+}
+</script>
+
+<script type="module" src="./main.js"></script>
+
+</body>
+</html>

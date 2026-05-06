@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+  <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+
+<div class="registro">
+  <div class="container">
+
+    <div class="left">
+      <div class="info-box">REGISTRO <br><br>
+      EN CASO DE SER EXTERNO NO INGRESAR UN LOCAL</div>
+
+      <img src="imagenes//iplacexlogo.jpg" class="logo">
+    </div>
+
+    <div class="right">
+
+      <div class="campo">
+        <select id="rol" class="input">
+          <option value="">SELECCIONAR ROL</option>
+          <option value="operador">Operador</option>
+          <option value="externo">Personal Externo</option>
+          <option value="jefe">Jefe Mantención</option>
+          <option value="tecnico">Técnico</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <input type="text" id="nombre" class="input" placeholder="INGRESAR NOMBRE:">
+      </div>
+
+      <div class="campo">
+        <input type="text" id="rut" class="input" placeholder="INGRESAR RUT:">
+      </div>
+
+      <div class="campo" id="localContainer">
+        <input type="text" id="local" class="input" placeholder="INGRESAR LOCAL:">
+      </div>
+
+      <div class="campo">
+        <input type="email" id="email" class="input" placeholder="INGRESAR CORREO:">
+      </div>
+
+      <div class="campo">
+        <input type="password" id="password" class="input" placeholder="CONTRASEÑA">
+      </div>
+
+      <div class="campo">
+        <button id="btnCrear">Guardar</button>
+      </div>
+
+      <p id="estado"></p>
+
+      <a href="index.html" class="volver">Volver al login</a>
+
+    </div>
+
+  </div>
+</div>
+
+<script type="module">
+import { registrarse } from "./app.js";
+
+const rol = document.getElementById("rol");
+const localContainer = document.getElementById("localContainer");
+
+rol.addEventListener("change", () => {
+  if (rol.value === "externo") {
+    localContainer.style.display = "none";
+  } else {
+    localContainer.style.display = "block";
+  }
+});
+
+document.getElementById("btnCrear").addEventListener("click", registrarse);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,470 @@
+.jefe {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.jefe .sidebar {
+  width: 220px;
+  background-color: #114fa3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+.jefe .sidebar button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.jefe .sidebar button:hover {
+  background-color: #333;
+}
+
+.jefe .sidebar button:active {
+  transform: scale(0.95);
+}
+
+.jefe .main {
+  flex: 1;
+  background-color: #114fa3;
+  display: flex;              
+  flex-direction: column;     
+  padding: 10px 50px 50px 50px;
+  gap: 20px;
+  position: relative;
+}
+
+.jefe .logo-fondo {
+  position: absolute;
+  width: 60%;
+  max-width: 600px;
+  aspect-ratio: 1/1;
+  border-radius: 50%; 
+  object-fit: cover;  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.jefe .main:has(.panel[style*="block"]) .logo-fondo,
+.jefe .main:has(.info-dia[style*="block"]) .logo-fondo {
+  display: none;
+}
+
+.jefe .panel {
+  display: none;
+  padding: 20px;
+  width: 100%;        
+  overflow: auto;     
+}
+
+.jefe table {
+  width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+}
+
+.jefe th,
+.jefe td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.jefe .filtros,
+.jefe .filtros-info {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.jefe button {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.jefe button:hover {
+  background-color: #333;
+}
+
+.jefe button:active {
+  transform: scale(0.95);
+}
+
+.jefe #btnSalir {
+  margin-top: auto;
+}
+
+.jefe .panel h3,
+.jefe .info-dia h3 {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 12px 25px;      
+  border-radius: 10px;
+  width: fit-content;
+  margin: 0 auto 20px auto;
+  letter-spacing: 2px;    
+  font-size: 16px;         
+  font-weight: normal;     
+}
+
+.jefe .form-agregar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  
+}
+
+.jefe .form-agregar input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.jefe .form-agregar button {
+  padding: 10px 15px;
+}
+
+.jefe #btnAgregar {
+  border: none;      
+  outline: none;      
+  box-shadow: none;   
+}
+
+.jefe table button {
+  border: none;        
+  outline: none;       
+  box-shadow: none;    
+}
+
+.jefe #btnBuscar {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.jefe #localInput {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.jefe #filtroEstado {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.jefe #tablaMaquinas {
+  margin-top: 20px;
+}
+
+.jefe #panelBuscar {
+  text-align: center;
+}
+
+.jefe input,
+.jefe select {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
+}
+
+.jefe #mensajeMaquinas {
+  display: none;
+  background-color: black;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.jefe .acciones button[id^="btnEliminar"] {
+  background-color: #b30000;
+  color: white;
+}
+
+.jefe .acciones button[id^="btnEliminar"]:hover {
+  background-color: #800000;
+}
+
+.jefe .acciones button[id^="btnEstado"] {
+  background-color: #c97902;
+  color: white;
+}
+
+.jefe .acciones button[id^="btnEstado"]:hover {
+  background-color: #e65100;
+}
+
+.jefe .acciones button:active {
+  transform: scale(0.95);
+}
+
+.jefe #btnBuscar {
+  width: 150px;
+  font-size: 12px;
+}
+
+.jefe #mensajeMantencion {
+  display: none;
+  background-color: black;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  width: fit-content;
+  margin: 20px auto; 
+}
+
+.jefe .filtros-inspecciones {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px; 
+}
+
+.jefe .filtros-inspecciones button {
+  width: 150px;        
+  padding: 10px 15px;
+  border: none;        
+  outline: none;       
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+
+.jefe #btnGuardarMantencion {
+  display: block;
+  margin: 25px auto;  
+  width: 200px;        
+  padding: 15px;       
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.jefe #btnFiltrarMantencion:hover,
+.jefe #btnGuardarMantencion:hover {
+  background-color: #333; 
+}
+
+.jefe #btnFiltrarMantencion:active,
+.jefe #btnGuardarMantencion:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+.jefe #mensajeMantReal {
+  display: none;
+  background-color: black;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.jefe #btnFiltrarMantReal:hover {
+  background-color: #333;
+}
+
+.jefe #btnFiltrarMantReal:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+
+.jefe #btnFiltrarJefe:hover {
+  background-color: #333;
+}
+
+.jefe #btnFiltrarJefe:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+.jefe #mensajeInspeccionesJefe {
+  display: none;
+  background-color: black;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.jefe .filtros-fallas {
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;       
+}
+
+.jefe #btnFiltrarFallasJefe {
+  background-color: black;
+  color: white;
+  border: none;              
+  outline: none;
+  padding: 10px 20px;        
+  border-radius: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  min-width: 140px;         
+}
+
+.jefe #btnFiltrarFallasJefe:hover {
+  background-color: #333;
+}
+
+.jefe #btnFiltrarFallasJefe:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+
+.jefe #mensajeFallasJefe {
+  display: none;
+  background-color: black;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.jefe #btnVerInformacionJefe {
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  min-width: 180px;
+}
+
+
+.jefe #btnVerInformacionJefe {
+  background-color: black;
+  color: white;
+  border: none;        
+  outline: none;
+  padding: 12px 25px;  
+  border-radius: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  min-width: 180px;    
+}
+
+.jefe #btnVerInformacionJefe:hover {
+  background-color: #333;
+}
+
+.jefe #btnVerInformacionJefe:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+.jefe .filtros-info-dia {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; 
+}
+
+.jefe .filtros-info-dia input,
+.jefe .filtros-info-dia select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.jefe .tabla-info {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 15px;
+}
+
+.jefe .tabla-info td {
+  padding: 10px;
+  border: 1px solid black;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.jefe #resultadoInfoDiaJefe {
+  width: 100%;
+  overflow: auto;
+}
+
+.jefe .info-dia {
+  display: none;
+  flex: 1;        
+  width: 100%;
+  overflow: auto;
+  padding: 20px;
+}
+
+.jefe .main.doble-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.jefe .panel.activo-doble {
+  flex: 1;
+  height: 50%;
+}
+
+.jefe .panel {
+  display: none;
+  flex: 1;
+}
+
+.jefe .panel.active {
+  display: block;
+}

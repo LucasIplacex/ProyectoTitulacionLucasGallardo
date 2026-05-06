@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Externo</title>
+  <link rel="stylesheet" href="externo.css">
+</head>
+
+<body>
+
+<div class="externo">
+
+  <div class="sidebar">
+
+    <button id="btnToggleFalla">Registrar Falla</button>
+    <button id="panelFallas">Mostrar registro de Fallas</button>
+    <button id="btnBuscarInspeccionesExternas">Visualizar inspecciones</button>
+    <button id="btnInfoDiaExterno">Ver información del día</button>
+    <button id="btnIrAnalisisExterno">Análisis</button>
+
+    <button id="btnSalir" onclick="salir()">Cerrar Sesión</button>
+
+  </div>
+
+  <div class="main">
+
+    <img src="imagenes/iplacexlogo.jpg" class="logo-fondo">
+
+    <div id="panelFalla" class="panel" style="display:none;">
+
+      <h3>Registrar Falla</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Local</th>
+            <th>Operador</th>
+            <th>Máquina</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Descripción</th>
+            <th>Observación</th>
+            <th>Falla</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+
+            <td>
+              <input type="text" id="inputLocal" list="listaLocales" placeholder="Local">
+              <datalist id="listaLocales"></datalist>
+            </td>
+
+            <td>
+              <select id="selectOperador">
+                <option value="">Operador</option>
+              </select>
+            </td>
+
+            <td>
+              <select id="selectMaquina">
+                <option value="">Máquina</option>
+              </select>
+            </td>
+
+            <td><input type="date" id="fechaFalla"></td>
+            <td><input type="time" id="horaFalla"></td>
+            <td><input type="text" id="descripcionFalla"></td>
+            <td><input type="text" id="Observacion"></td>
+            <td><input type="checkbox" id="Falla"></td>
+
+          </tr>
+        </tbody>
+      </table>
+
+      <button id="btnGuardarFalla">Guardar Falla</button>
+
+    </div>
+
+    <div id="panelListaFallas" class="panel" style="display:none;">
+
+      <h3>Registro de Fallas</h3>
+
+      <div class="filtros-fallas">
+        <input type="text" id="filtroLocalFallasExt" placeholder="Filtrar por local">
+        <input type="date" id="filtroFechaFallasExt">
+        <button id="btnFiltrarFallasExt">Buscar</button>
+      </div>
+
+      <table id="tablaFallas">
+        <thead>
+          <tr>
+            <th>Local</th>
+            <th>Operador</th>
+            <th>Máquina</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Descripción</th>
+            <th>Observación</th>
+            <th>Falla</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody id="tablaFallasBody"></tbody>
+      </table>
+
+      <p id="mensajeBusquedaFallasExt" style="display:none;"></p>
+
+    </div>
+
+    <div id="panelInspecciones" class="panel" style="display:none;">
+
+      <h3>Inspecciones</h3>
+
+      <div class="filtros-inspecciones">
+        <input type="text" id="filtroLocal" placeholder="Filtrar por local">
+        <input type="date" id="filtroFecha">
+        <button id="btnFiltrarInspecciones">Buscar</button>
+      </div>
+
+      <p id="mensajeBusquedaExterno" style="display:none;"></p>
+
+      <table id="tablaVisualizar" style="display:none;">
+        <thead>
+          <tr>
+            <th>Máquina</th>
+            <th>Temperatura</th>
+            <th>Hora</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Observaciones</th>
+            <th>Falla</th>
+          </tr>
+        </thead>
+
+        <tbody id="tablaVisualizarBody"></tbody>
+      </table>
+
+      <p id="mensajeBusqueda"></p>
+
+    </div>
+
+    <div id="panelInfoDiaExterno" class="info-dia" style="display:none;">
+
+      <h3>Información del día</h3>
+
+      <div class="filtros-info-dia">
+        <input type="text" id="infoLocalExterno" placeholder="Local">
+        <select id="infoMaquinaExterno"></select>
+        <button id="btnBuscarInfoDiaExterno">Analizar</button>
+      </div>
+
+      <div id="resultadoInfoDiaExterno"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function salir() {
+  window.location.href = "index.html";
+}
+</script>
+
+<script type="module" src="./main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Técnico</title>
+  <link rel="stylesheet" href="tecnico.css">
+</head>
+
+<body>
+
+<div class="tecnico">
+
+  <div class="sidebar">
+
+    <button id="btnToggleMantencionTecnico">Ver peticiones de Mantención</button>
+    <button id="btnrealizarMantencionTecnico">Registrar mantención</button>
+    <button id="btnEstadoMantencionTecnico">Ver estado mantención</button>
+    <button id="btnInspeccionesTecnico">Visualizar inspecciones</button>
+    <button id="btnInfoDiaTecnico">Información del día</button>
+    <button id="btnIrAnalisisTecnico">Análisis</button>
+
+    <button id="btnSalir">Cerrar Sesión</button>
+
+  </div>
+
+  <div class="main">
+
+    <img src="imagenes/iplacexlogo.jpg" class="logo-fondo">
+
+    <div id="panelTecnicoMantencion" class="panel" style="display:none;">
+
+      <h3>Peticiones de Mantención</h3>
+
+      <div class="filtros">
+        <input type="text" id="filtroLocalTecnico" placeholder="Filtrar por local">
+        <input type="text" id="filtroEstadoTecnico" placeholder="Estado">
+        <input type="date" id="filtroFechaTecnico">
+        <button id="btnFiltrarTecnico">Buscar</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Local</th>
+            <th>Máquina</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Observaciones</th>
+            <th>Estado</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="tablaTecnicoBody"></tbody>
+      </table>
+
+    <div id="mensajeBusquedaTecnico" class="mensaje-busqueda"></div>
+
+    </div>
+
+    <div id="panelRegistrarMantencion" class="panel" style="display:none;">
+
+      <h3>Registrar Mantención</h3>
+
+      <div class="filtros">
+        <input type="text" id="filtroLocalTecnicoRegistrar" placeholder="Filtrar por local">
+        <input type="text" id="filtroEstadoTecnicoRegistrar" placeholder="Estado">
+        <input type="date" id="filtroFechaTecnicoRegistrar">
+        <button id="btnFiltrarRegistrar">Buscar</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Solicitud</th>
+            <th>Máquina</th>
+            <th>Local</th>
+            <th>Fecha solicitud</th>
+            <th>Fecha trabajo</th>
+            <th>Hora</th>
+            <th>Observaciones</th>
+            <th>Detalle</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaRegistrarMantencionBody"></tbody>
+      </table>
+
+      <div id="mensajeBusquedaRegistrar" class="mensaje-busqueda"></div>
+
+      <button id="btnGuardarMantenciones">Guardar</button>
+
+    </div>
+
+    <div id="panelInspeccionesTecnico" class="panel" style="display:none;">
+
+      <h3>Inspecciones</h3>
+
+      <div class="filtros">
+        <input type="text" id="filtroLocalTecnicoInspeccion" placeholder="Filtrar por local">
+        <input type="date" id="filtroFechaTecnicoInspeccion">
+        <button id="btnFiltrarInspeccionTecnico">Buscar</button>
+      </div>
+
+      <table id="tablaInspeccionesTecnico">
+        <thead>
+          <tr>
+            <th>Máquina</th>
+            <th>Local</th>
+            <th>Temperatura</th>
+            <th>Hora</th>
+            <th>Fecha</th>
+            <th>Observaciones</th>
+            <th>Estado</th>
+            <th>Falla</th>
+          </tr>
+        </thead>
+        <tbody id="tablaInspeccionesTecnicoBody"></tbody>
+      </table>
+
+      <div id="mensajeBusquedaInspeccionesTecnico" class="mensaje-busqueda"></div>
+
+    </div>
+
+    <div id="panelEstadoMantencionTecnico" class="panel" style="display:none;">
+
+      <h3>Estado de Mantenciones</h3>
+
+      <div class="filtros">
+        <input type="text" id="filtroLocalEstadoMantTecnico" placeholder="Filtrar por local">
+        <input type="date" id="filtroFechaEstadoMantTecnico">
+        <button id="btnFiltrarEstadoMantTecnico">Buscar</button>
+      </div>
+
+      <table id="tablaEstadoMantencionTecnico" style="display:none;">
+        <thead>
+          <tr>
+            <th>Solicitud</th>
+            <th>Máquina</th>
+            <th>Local</th>
+            <th>Fecha solicitud</th>
+            <th>Fecha trabajo</th>
+            <th>Hora</th>
+            <th>Observaciones</th>
+            <th>Detalle</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaEstadoMantencionTecnicoBody"></tbody>
+      </table>
+
+      <div id="mensajeBusquedaEstadoMantTecnico" class="mensaje-busqueda"></div>
+
+    </div>
+
+    <div id="panelInfoDiaTecnico" class="info-dia" style="display:none;">
+
+      <h3>Información del día</h3>
+
+      <div class="filtros-info">
+        <input type="text" id="infoLocalTecnico" placeholder="Filtrar por local">
+        <select id="infoMaquinaTecnico"></select>
+        <button id="btnVerInformacionTecnico">Analizar</button>
+      </div>
+ 
+      <div id="resultadoInfoDiaTecnico"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script type="module" src="./main.js"></script>
+
+</body>
+</html>

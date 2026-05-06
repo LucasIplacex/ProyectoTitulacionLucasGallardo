@@ -1,0 +1,329 @@
+.operador {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.operador .sidebar {
+  width: 220px;
+  background-color: #114fa3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+.operador .sidebar button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+  
+}
+
+.operador .main {
+  flex: 1;
+  background-color: #114fa3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  padding: 10px 50px 50px 50px;
+  gap: 20px;
+  position: relative;
+}
+
+.operador .logo-fondo {
+  position: absolute;
+  width: 60%;        
+  max-width: 600px;  
+  aspect-ratio: 1/1; 
+  border-radius: 50%;
+  overflow: hidden; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.operador .main:has(.panel[style*="block"]) .logo-fondo,
+.operador .main:has(.info-dia[style*="block"]) .logo-fondo {
+  display: none;
+}
+
+.operador .panel {
+  background-color: transparent;
+  padding: 20px;
+  width: 100%;
+  overflow: auto;
+  display: none;
+}
+
+.operador .main:has(.panel[style*="block"] ~ .panel[style*="block"]) .panel[style*="block"] {
+  height: 400px;
+}
+
+.operador table {
+  width: 100%;
+  border-collapse: collapse;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.operador th,
+.operador td {
+  padding: 10px;
+  text-align: center;
+    border: 1px solid black;
+  
+}
+
+.operador #btnGuardarInspeccion {
+  display: block;      
+  margin: 20px auto;
+  margin-top: 15px;
+  padding: 15px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.operador .info-dia {
+  background-color: #114fa3;
+  padding: 20px;
+  display: none; 
+}
+
+.operador input,
+.operador select {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
+  
+}
+
+.operador #btnBuscarInfoDia {
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  margin-top: 0;
+  width: 150px;
+}
+
+.operador #btnSalir {
+  margin-top: auto;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+}
+
+.operador .panel h3 {
+  text-align: center;
+  background-color: black; 
+  color: white; 
+  padding: 15px 30px;
+  border-radius: 10px;
+  width: fit-content; 
+  margin: 0 auto 20px auto; 
+  font-family: Arial, sans-serif;
+  font-size: 16px;       
+  font-weight: normal;   
+  letter-spacing: 3px;   
+}
+
+.operador .btn-editar {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.operador .btn-borrar {
+  background-color: #b30000; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.operador .btn-editar:hover {
+  background-color: #333;
+}
+
+.operador .btn-borrar:hover {
+  background-color: #800000;
+}
+
+.operador .btn-guardar {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.operador .btn-cancelar {
+  background-color: #b30000; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.operador .btn-guardar:hover {
+  background-color: #333;
+}
+
+.operador .btn-cancelar:hover {
+  background-color: #800000;
+}
+
+.operador td:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border: none;
+}
+
+.operador td:last-child button {
+  flex: 1; 
+  max-width: 90px;
+}
+
+.operador #btnBuscarInspecciones {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  width: 150px; 
+}
+
+.operador .filtros {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center; 
+  margin-bottom: 15px;
+}
+
+.operador .info-dia h3 {
+  background-color: black; 
+  color: white; 
+  padding: 15px 30px;
+  border-radius: 10px;
+  width: fit-content; 
+  margin: 0 auto 20px auto; 
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.operador .filtros-info {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px; 
+}
+
+.operador .tabla-info {
+  width: 100%;              
+  table-layout: fixed;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 15px;
+  
+}
+
+.operador .tabla-info td {
+  text-align: left;
+}
+
+.operador .tabla-info td:last-child {
+  display: table-cell; 
+  border: 1px solid black;
+}
+
+.operador #mensajeBusqueda {
+  display: none; 
+  background-color: black;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  width: fit-content;
+  margin: 15px auto; 
+}
+
+.operador button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.operador button:hover {
+  background-color: #333;
+}
+
+.operador button:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+.operador #btnGuardarInspeccion:active {
+  background-color: #444;
+  transform: scale(0.95);
+}
+
+.operador #btnGuardarInspeccion:hover {
+  background-color: #444; 
+}
+
+.operador #btnBuscarInspecciones:hover {
+  background-color: #444
+}
+
+.operador #btnBuscarInfoDia:hover {
+  background-color: #666;
+}
+
+#btnSalir:hover {
+  background-color: #333;
+}
+

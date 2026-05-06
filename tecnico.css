@@ -1,0 +1,291 @@
+body {
+  margin: 0; 
+}
+
+.tecnico {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.tecnico .sidebar {
+  width: 220px;
+  background-color: #114fa3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+.tecnico .sidebar button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  letter-spacing: 2px;
+}
+
+.tecnico .main {
+  flex: 1;
+  background-color: #114fa3;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px 50px 50px;
+  gap: 20px;
+  position: relative;
+}
+
+.tecnico .panel {
+  display: none;
+  padding: 20px;
+}
+
+.tecnico table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.tecnico th,
+.tecnico td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.tecnico .filtros {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tecnico #btnSalir {
+  margin-top: auto;
+  width: 100%;
+}
+
+.tecnico .logo-fondo {
+  position: absolute;
+  width: 60%;
+  max-width: 600px;
+  aspect-ratio: 1/1;      
+  border-radius: 50%;    
+  overflow: hidden;       
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;      
+}
+
+.tecnico .main:has(.panel[style*="block"]) .logo-fondo,
+.tecnico .main:has(.info-dia[style*="block"]) .logo-fondo {
+  display: none;
+}
+
+.tecnico button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tecnico button:hover {
+  background-color: #333;
+}
+
+.tecnico button:active {
+  transform: scale(0.95);
+  background-color: #000;
+}
+
+.tecnico .panel h3,
+.tecnico .info-dia h3 {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 0 auto 20px auto; 
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+
+.tecnico #btnFiltrarTecnico,
+.tecnico #btnFiltrarRegistrar,
+.tecnico #btnFiltrarInspeccionTecnico,
+.tecnico #btnFiltrarEstadoMantTecnico {
+
+  width: 150px;
+  padding: 10px 15px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tecnico #btnFiltrarTecnico:hover,
+.tecnico #btnFiltrarRegistrar:hover,
+.tecnico #btnFiltrarInspeccionTecnico:hover,
+.tecnico #btnFiltrarEstadoMantTecnico:hover {
+  background-color: #333;
+}
+
+.tecnico button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tecnico button:hover {
+  background-color: #333;
+}
+
+.tecnico .panel {
+  padding: 20px;
+  width: 100%;
+  overflow: auto; 
+  display: none;
+}
+
+.tecnico .mensaje-busqueda {
+  display: none;
+  background-color: black;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.tecnico #btnGuardarMantenciones {
+  display: block;
+  margin: 20px auto; 
+  padding: 15px;
+  width: 220px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tecnico #btnGuardarMantenciones:hover {
+  background-color: #333;
+}
+
+.tecnico .info-dia {
+  padding: 20px;
+  width: 100%;
+  overflow: auto;
+  display: none;
+}
+
+.tecnico .info-dia h3 {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 0 auto 20px auto;
+  letter-spacing: 3px;
+}
+
+.tecnico .filtros-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tecnico .filtros-info input,
+.tecnico .filtros-info select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.tecnico #btnVerInformacionTecnico {
+  width: 150px;
+  font-size: 12px;
+}
+
+.tecnico .tabla-info {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 15px;
+}
+
+.tecnico .tabla-info td {
+  padding: 10px;
+  border: 1px solid black;
+  text-align: left;
+  word-wrap: break-word;
+  
+}
+
+.tecnico .tabla-info td:last-child {
+  display: table-cell;
+}
+
+.tecnico #resultadoInfoDiaTecnico {
+  width: 100%;
+  overflow: auto;
+}
+
+.tecnico #resultadoInfoDiaTecnico:empty {
+  display: none;
+}
+
+.tecnico #btnVerInformacionTecnico {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tecnico #btnVerInformacionTecnico:hover {
+  background-color: #333;
+}
+
+.tecnico #btnVerInformacionTecnico:active {
+  transform: scale(0.95);
+}
+
+.tecnico .panel,
+.tecnico .info-dia {
+  display: none;
+  flex: 1;              
+  overflow: auto;       
+  padding: 20px;
+}
+
+.tecnico .panel.active,
+.tecnico .info-dia.active {
+  display: block;
+}
