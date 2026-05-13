@@ -1963,7 +1963,7 @@ export async function cargarInspeccionesExterno() {
 
   const tbody = document.getElementById("tablaVisualizarBody");
   const tabla = document.getElementById("tablaVisualizar");
-  const mensaje = document.getElementById("mensajeBusquedaExterno"); // 👈 FALTABA
+  const mensaje = document.getElementById("mensajeBusquedaExterno");
 
   const filtroLocal = document.getElementById("filtroLocal").value.trim();
   const filtroFecha = document.getElementById("filtroFecha").value;
